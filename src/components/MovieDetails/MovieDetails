@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Button from '@material-ui/core/Button'
 
 function MovieDetails () {
 const params = useParams();
@@ -24,8 +25,8 @@ return (
 <h2>{getDetails.title}</h2>
 <img src={getDetails.poster}/>
 <p>{getDetails.description}</p>
-<button type="submit"
-onClick={homePage}>Home</button>
+<Button type="submit"
+onClick={homePage}>Home</Button>
 
 
 

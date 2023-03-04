@@ -32,10 +32,10 @@ function* fetchAllMovies() {
 
 //
 function* getDetails(action) {
-   try { let response = yield axios.get(`/api/movie/movieDetail/${action.payload}`)
+   try { const response = yield axios.get(`/api/movie/movieDetail/${action.payload}`)
    console.log(response.data)
    // YIELD IS THE SAME AS DISPATCH / ALSO A TRIGGER
-    yield put ({type: 'GET_DETAILS', payload: response.data[0]})
+    yield put ({type: 'FETCH_DETAILS', payload: response.data[0]})
    } catch (error) {
         console.log('Fetch error');
    }
@@ -66,7 +66,7 @@ const genres = (state = [], action) => {
 
 const movieDetailReducer = (state = [],action) => {
     switch(action.type) {
-        case 'GET_DETAILS' :
+        case 'FETCH_DETAILS' :
             return action.payload;
             default:
                 return state
