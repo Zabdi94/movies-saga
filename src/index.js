@@ -17,6 +17,7 @@ function* rootSaga() {
     yield takeEvery('GET_DETAILS', getDetails)
 }
 
+// SENDS AXIOS.GET TO CALL THE API
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -29,9 +30,11 @@ function* fetchAllMovies() {
     }
 }
 
+//
 function* getDetails(action) {
    try { let response = yield axios.get(`/api/movie/movieDetail/${action.payload}`)
    console.log(response.data)
+   // YIELD IS THE SAME AS DISPATCH / ALSO A TRIGGER
     yield put ({type: 'GET_DETAILS', payload: response.data[0]})
    } catch (error) {
         console.log('Fetch error');
