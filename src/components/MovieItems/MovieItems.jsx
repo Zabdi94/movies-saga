@@ -1,8 +1,9 @@
 //IMPORTS
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Button } from "@mui/material";
+import { TextField} from "@mui/material"
 
 function MovieIems () {
 const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const getMovie = (event) => {
         type: 'ADD_MOVIE',
         payload: {
             title: title,
-            poster:poster,
+            poster: poster,
             description: description
         }
     })
@@ -32,9 +33,9 @@ return (
          <form noValidate autoComplete='off' 
                 onSubmit={getMovie}>
             
-                     <TextField size='small' label='Title' variant='outlined' color='secondary' type='text' value={title} onChange={(evt)=> {setTitle(evt.target.value)}}/>
-                     <TextField size='small' label='Poster' variant='outlined' color='secondary' type='text' value={poster} onChange={(evt)=> {setPoster(evt.target.value)}}/>
-                     <TextField size='small' label='Description' variant='outlined' color='secondary' type='text' value={description} onChange={(evt)=> {setDiscription(evt.target.value)}}/>
+                     <TextField size='medium' label='Title' variant='outlined' color='secondary' type='text' value={title} onChange={(evt)=> {setTitle(evt.target.value)}}/>
+                     <TextField size='medium' label='Poster' variant='outlined' color='secondary' type='text' value={poster} onChange={(evt)=> {setPoster(evt.target.value)}}/>
+                     <TextField size='medium' label='Description' variant='outlined' color='secondary' type='text' value={description} onChange={(evt)=> {setDiscription(evt.target.value)}}/>
                      <Button size='medium' type='submit' color='secondary' variant='outlined'>Add a New Movie</Button>
                  </form>
         

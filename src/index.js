@@ -32,14 +32,12 @@ function* fetchAllMovies() {
 
 //
 function* getDetails(action) {
-   try { const response = yield axios.get(`/api/movie/movieDetail/${action.payload}`)
+    const response = yield axios.get(`/api/movie/movieDetail/${action.payload}`)
    console.log(response.data)
    // YIELD IS THE SAME AS DISPATCH / ALSO A TRIGGER
     yield put ({type: 'FETCH_DETAILS', payload: response.data[0]})
-   } catch (error) {
-        console.log('Fetch error');
-   }
-}
+   } 
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
