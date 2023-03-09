@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-
+// This will show the details of the movie (poster,title,description)
 function MovieDetails () {
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const getDetails = useSelector(store => store.movieDetailsReducer)
+    const getDetails = useSelector(store => store.movieDetailReducer)
     
     useEffect (()=> {
         dispatch({

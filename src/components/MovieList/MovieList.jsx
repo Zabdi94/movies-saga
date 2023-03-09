@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import { useHistory } from 'react-router-dom';
 
+// List of movies that will be shown
 function MovieList() {
-
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
     const history = useHistory();
